@@ -140,6 +140,7 @@ d3.select('.calculate-btn').on('click', () => {
     siUnit = d3.select("[name='dimension-unit']").property('value')
     hasta = d3.select('[name="hasta"]').property('value');
 
+
     if(realLength == "" || realBreadth == "" || hasta == "" || siUnit == "") {
         alert("Please provide all details");
 
@@ -147,7 +148,7 @@ d3.select('.calculate-btn').on('click', () => {
         length = convertIntoFeet(realLength, siUnit);
         breadth = convertIntoFeet(realBreadth, siUnit);
 
-        reportContainer = d3.select('.display-report-area').html(Template.aayadiDetailedReport(
+        reportContainer = d3.select('.display-report-area').classed('text-center', false).html(Template.aayadiDetailedReport(
             realLength,
             realBreadth,
             siUnit,

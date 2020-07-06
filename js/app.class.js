@@ -12,9 +12,10 @@ import StageFourth from './stages/stagefourth.class.js';
 
 class App {
 
-    constructor() {
+    constructor(BASE_URL) {
 
         // ?  C L A S S  V A R I A B L E 
+        this.BASE_URL = BASE_URL;
         this.fill = '#EF5350';
         this.strokeWidth = 2;
         this.strokeColor = '#6869AB';
@@ -28,7 +29,7 @@ class App {
         this.centroid = [];
         this.faceCoords = [];
         this.distanceBetweenTwoPoints = {};
-        this.division = 8;
+        this.division = 16;
         this.angle = 0;
 
         // ?  A P P  F U N C T I O N A L I T Y
@@ -161,18 +162,15 @@ class App {
 
             this.start();
 
-
-            console.log(this.mapBoundariesCoords,this.centroid,this.faceCoords,this.type,this._stage);
-
         } else {
 
-          //this.clearMap();
+          // this.clearMap();
 
           // INITIALIZING STAGE
           this._stage = 1;
 
           //  M O U S E  E V E N T S
-          // this.addMouseEvent(this);
+          this.addMouseEvent();
 
         }
         
@@ -212,20 +210,6 @@ class App {
               case 3:
               {
                 // STAGE THIRD
-                this.displayMessage("Select two point on map", "danger");
-                this.assist.drawMask({layer: this.firstLayer, points: this.mapBoundariesCoords, size: this.RECT_SIZE});
-                this.assist.drawBoundaries({layer: this.firstLayer, points: this.mapBoundariesCoords});
-                this.assist.drawBharamNabhi({layer: this.firstLayer, centroid: this.centroid});
-                this.assist.drawDirectionLines(this.firstLayer, this.faceCoords, this.centroid, this.division, this.angle);
-                this.assist.drawFacingLine(this.firstLayer, this.centroid, this.faceCoords);
-                let stageThird = new StageThird({layer: this.secondLayer, className: "find-distance"});
-                stageThird.startDrawing(this);
-              }
-              break;
-              case 4:
-              {
-
-                // STAGE FOURTH
                 this.hideMessage();
                 this.deactiveMouseEvent();
                 this.assist.drawBackgroundGrid(this.firstLayer, this.centroid, this.faceCoords, this.division, this.angle);
@@ -246,7 +230,23 @@ class App {
                 // ? DRAW BAR CHART
                 this.modal.drawMap({areaArr: this.mapPolygonsAreaArray, division: this.division, dimension: this.distanceBetweenTwoPoints});
                 
-                let stageFourth = new StageFourth(this.attribute);
+                let stageThird = new StageThird(this.attribute);
+                stageThird.startDrawing(this);
+        
+
+              }
+              break;
+              case 4:
+              {
+
+                // STAGE FOURTH
+                this.displayMessage("Select two points to define scale of the drawing", "danger");
+                this.assist.drawMask({layer: this.firstLayer, points: this.mapBoundariesCoords, size: this.RECT_SIZE});
+                this.assist.drawBoundaries({layer: this.firstLayer, points: this.mapBoundariesCoords});
+                this.assist.drawBharamNabhi({layer: this.firstLayer, centroid: this.centroid});
+                this.assist.drawDirectionLines(this.firstLayer, this.faceCoords, this.centroid, this.division, this.angle);
+                this.assist.drawFacingLine(this.firstLayer, this.centroid, this.faceCoords);
+                let stageFourth = new StageFourth({layer: this.secondLayer, className: "find-distance"});
                 stageFourth.startDrawing(this);
                 
               }
@@ -263,8 +263,22 @@ class App {
         this._response = false;
         stage.end(this);
     }
+
+
     
     // ?  M O U S E   E V E N T S
+    addMouseEvent() {
+      // CLASS REFERENCE
+      let that = this;
+
+      d3.select('#canvas').on('click', function() {
+        let zoomActive = (d3.select('#zoom-state').attr('data-zoom-state') == 'enable') ?  true : false;
+        if(zoomActive) {
+          that.showToast("Warning!","Please disable zoom first","Reset",this)
+        }
+      })
+
+    }
 
      
     // ?  A L L  G E T T E R S  A N D  S E T T E R S  ? //
@@ -390,6 +404,40 @@ class App {
             switch(menuItem) {
                 case "import map" : {
                     document.querySelector('input.import-map-file').click();
+                }
+                break;
+                case "vpm" : {
+                  let data = {
+                    src: `${that.BASE_URL}assets/images/vpm.svg`,
+                    width: 400,
+                    height: 400
+                  }
+                  let object = new Object({
+                    layer: that.secondLayer,
+                    data: data,
+                    canvasSize: that.canvasSize,
+                    objectName: 'VPM',
+                    attribute: that.attribute
+                  });
+                }
+                break;
+                case "mvpc" : {
+                  let data = {
+                    src: `${that.BASE_URL}assets/images/mvpc.svg`,
+                    width: 400,
+                    height: 400
+                  }
+                  let object = new Object({
+                    layer: that.secondLayer,
+                    data: data,
+                    canvasSize: that.canvasSize,
+                    objectName: 'MVPC',
+                    attribute: that.attribute
+                  });
+                }
+                break;
+                case "dimension" : {
+                  
                 }
                 break;
                 default:
@@ -583,12 +631,12 @@ class App {
           if(state === 'enable') {
             that.svg.on('.zoom', null);
             element.attr('data-zoom-state', 'disable');
-            element.select('img').attr('src', '/vastuteq/assets/icons/zoom-disable.svg');
+            element.select('img').attr('src', `${that.BASE_URL}assets/icons/zoom-disable.svg`);
           }else {
             that.svg.call(that.zoom)
             that.zoom.transform(that.canvas, d3.zoomIdentity.translate(that.zoomData.x,that.zoomData.y).scale(that.zoomData.k));
             element.attr('data-zoom-state', 'enable');
-            element.select('img').attr('src', '/vastuteq/assets/icons/zoom-enable.svg');
+            element.select('img').attr('src', `${that.BASE_URL}assets/icons/zoom-enable.svg`);
           }
         })
 
@@ -738,10 +786,25 @@ class App {
       d3.select('#appAlert').classed('show', false);
     }
 
+    showToast(heading, msg, buttonText, ref, type="warning") {
+      let toastbox = d3.select('#appToast');
+      toastbox.select('.modal-title').html(heading)
+      .classed(`text-${type}`, true);
+      toastbox.select('.modal-body').html(msg);
+      let btn = toastbox.select('button.btn').style('display','none');
+
+      $('#appToast').modal('show');
+    }
+
+    hideToast() {
+        $('#appToast').modal('hide');
+    }
+
+
 
 
 
 }
 
 
-const app = new App();
+const app = new App(BASE_URL);

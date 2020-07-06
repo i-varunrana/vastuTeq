@@ -26,8 +26,6 @@
   src: url("/vastuteq/assets/fonts/Raleway-Bold.ttf");
 }
 
-/* checking for changes */
-
 /***
 -------------------- B A S I C  C L A S S E S --------------------
 ***/
@@ -182,6 +180,10 @@ input[type="number"] {
 -------------------- A P P  C O L O R S --------------------
 ***/
 /************************** X ***************************/
+label {
+  color: black !important;
+}
+
 body {
   margin: 0;
   padding: 0;

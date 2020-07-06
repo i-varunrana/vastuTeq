@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="<?php echo base_url('css/modal.css')?>">
 
 
+    <!-- BASE URL -->
+    <script> const BASE_URL = "<?php echo base_url() ?>"; </script>
     <!-- JQUERY -->
     <script src="<?php echo base_url('js/helper/jquery.min.js')?>"></script>
     <!-- POPPER JS -->
@@ -62,6 +64,9 @@
                             <input class="import-map-file" type="file" style="display:none">
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-menu-item="add image">Add Image</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item object" href="#" data-menu-item="vpm">VPM</a>
+                            <a class="dropdown-item object" href="#" data-menu-item="mvpc">MVPC</a>
                         </div>
                     </li>
 
@@ -84,10 +89,7 @@
                             Options
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Dimension</a>
                         </div>
                     </li>
                 </ul>

@@ -61,9 +61,11 @@ export default class StageFirst {
         
             that.drawing = true;
     
+
             that.startPoint = [d3.mouse(this)[0], d3.mouse(this)[1]];
+            let closeCoord = (that.points != undefined && that.points.length > 2) ? Utility.isClosestCoord(that.points[0], d3.mouse(this)) : null;
             if(that.layer.select(`g.${that.className}`).empty()) that.g = that.layer.append('g').attr('class', that.className);
-            if(d3.event.target.hasAttribute('is-handle')) { that.closePolygon(REF); return true; }
+            if(d3.event.target.hasAttribute('is-handle') || closeCoord) { that.closePolygon(REF); return true; }
     
             that.points.push(d3.mouse(this));
             that.g.select('polyline').remove();

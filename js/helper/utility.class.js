@@ -61,12 +61,10 @@ export default class Utility {
       };
     }
 
-      // ! TO FIND CLOSEST COORDINATE
+    // ! TO FIND CLOSEST COORDINATE
     static closestCoord(arr, coord) {
-      let i = 0,
-        minDiff = 100,
-        ans = [];
-      for (i in arr) {
+      let minDiff = 50, ans = [];
+      for (let i in arr) {
         let x = Math.abs(coord[0] - arr[i][0]);
         let y = Math.abs(coord[1] - arr[i][1]);
         if (x + y < minDiff) {
@@ -75,6 +73,19 @@ export default class Utility {
         }
       }
       return ans;
+    }
+
+    // ! TO CHECK CLOSEST COORDINATE
+    static isClosestCoord(source, target) {
+      let minDiff = 10;
+      let x = Math.abs(target[0] - source[0]);
+      let y = Math.abs(target[1] - source[1]);
+      if(x+y < minDiff) {
+        minDiff = x + y;
+        return true;
+      }else {
+        return false;
+      }
     }
 
     // ! TO FIND PERPENDICULAR POINT
