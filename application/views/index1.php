@@ -31,7 +31,7 @@
       <img class="logo" src="<?php echo base_url('assets/logo/logo2.svg')?>" alt="logo">
     </div>
     <div class="login-box">
-      <form action="<?php echo base_url('Login/verifyUser'); ?>" method="post">
+      <form action="<?php echo base_url('Login/verifyUser');?>" method="post">
         <div class="form" id="form">
           <div class="field email">
             <div class="icon"></div>

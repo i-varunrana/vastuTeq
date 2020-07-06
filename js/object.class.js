@@ -87,6 +87,7 @@ export default class Object {
           .attr("height", 15)
           .style('cursor', 'pointer')
           .on("click", function(d) {
+            d3.event.stopPropagation()
             d.ref.g.remove();
           });
 

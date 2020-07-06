@@ -108,8 +108,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="inputAddress">Address</label>
-                                    <textarea class="form-control form-control-sm" name="address" row='6' placeholder="property address" />
-                                    </textarea>
+                                    <textarea class="form-control form-control-sm" name="address" row='6' placeholder="property address" /></textarea>
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
@@ -155,7 +154,7 @@
                 </div>
                 <div class="modal-body">
                     
-                    <form action="<?php echo base_url('Main/addClient') ?>" method="post" id="clientInfo">
+                    <form  method="post" id="clientInfo">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Full Name</label>
@@ -181,7 +180,7 @@
                             <button type="button" class="btn btn-outline-secondary btn-sm rounded-0" data-dismiss="modal">
                                 Close
                             </button>
-                            <input type="submit" value="Save Info" class="btn btn-outline-primary btn-sm rounded-0 save-client-info">
+                            <input type="button" value="Save Info" class="btn btn-outline-primary btn-sm rounded-0 save-client-info">
 
 
                     </form>
