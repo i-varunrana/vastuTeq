@@ -13,7 +13,7 @@ class Login extends ci_controller
 		date_default_timezone_set("Asia/Kolkata");
 		
 		if (isset($_SESSION['userInfo'])&&!empty($_SESSION['userInfo'])) {
-			redirect('Main');
+			redirect(base_url('Main'));
 		}
 	}
 

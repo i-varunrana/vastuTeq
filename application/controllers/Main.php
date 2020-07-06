@@ -99,11 +99,11 @@ class Main extends CI_Controller
 		}
 	}
 
-	public function draw($id)
+	public function draw()
 	{
-		$data['propertId'] = base64_decode($id);
+		// $data['propertId'] = base64_decode($id);
 		// print_r($data);die;
-		$this->load->view('draw',$data);
+		$this->load->view('draw');
 	}
 
 	public function devtas()

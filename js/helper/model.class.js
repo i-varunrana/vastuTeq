@@ -1,8 +1,8 @@
 export default class Model {
-
+    
     constructor() {
-        // The state of the model, an array of House Map objects, prepopulated with some data
-        this.houseMaps = JSON.parse(localStorage.getItem("houseMaps")) || [];
+      // The state of the model, an array of House Map objects, prepopulated with some data
+      this.houseMaps = JSON.parse(localStorage.getItem("houseMaps")) || [];
     }
 
     _commit(houseMaps) {
@@ -26,35 +26,14 @@ export default class Model {
             dimension: {},
             complete: false,
         }
-        showAlert('hello');
+
         this.houseMaps.push(houseMap);
         this._commit(this.houseMaps);
-
-        //avin data in backend through ajax
-        var formData = new FormData();
-        formData.append('id', data.id);
-        formData.append('stage', 1);
-        formData.append('imageData', JSON.stringify(data.image));
-        formData.append('type', "custom");
-        formData.append('vedicBoundariesCoords', []);
-        formData.append('customBoundariesCoords', []);
-        formData.append('centroid', []);
-        formData.append('faceCoords', []);
-        formData.append('dimension', JSON.stringify({}));
-        formData.append('complete', false);
-        formData.append('propertyId', propertyId);
-        var url = base_url + "/Main/addhouseMaps";
-        AjaxPost(formData, url, addHouseMapssuccess, AjaxError);
-        function addHouseMapssuccess(content,targetTextarea) {
-            var result = JSON.parse(content);
-            console.log(result)            
-        }
-        
     }
 
     editType(id, updatedType) {
         this.houseMaps = this.houseMaps.map(houseMap =>
-            houseMap.id === id ? {
+            houseMap.id === id ? { 
                 id: houseMap.id,
                 stage: houseMap.stage,
                 imageData: houseMap.imageData,
@@ -63,35 +42,17 @@ export default class Model {
                 customBoundariesCoords: houseMap.customBoundariesCoords,
                 centroid: houseMap.centroid,
                 faceCoords: houseMap.faceCoords,
-                dimenision: houseMap.faceCoords,
+                dimenision: houseMap.dimenision,
                 complete: houseMap.complete
             } : houseMap
         )
 
-        this._commit(this.houseMaps);
-        var formData = new FormData();
-        formData.append('id', houseMap.id);
-        formData.append('stage', houseMap.stage);
-        formData.append('imageData', JSON.stringify(houseMap.imageData));
-        formData.append('type', updatedType);
-        formData.append('vedicBoundariesCoords', JSON.stringify(houseMap.vedicBoundariesCoords));
-        formData.append('customBoundariesCoords', JSON.stringify(houseMap.customBoundariesCoords));
-        formData.append('centroid', JSON.stringify(houseMap.centroid));
-        formData.append('faceCoords', JSON.stringify(houseMap.faceCoords));
-        formData.append('dimension', JSON.stringify(houseMap.faceCoords));
-        formData.append('complete', houseMap.complete);
-        formData.append('propertyId', propertyId);
-        var url = base_url + "/Main/updatehouseMaps";
-        AjaxPost(formData, url, updateHouseMapssuccess, AjaxError);
-        function updateHouseMapssuccess(content,targetTextarea) {
-            var result = JSON.parse(content);
-            console.log(result)            
-        }
+        this._commit(this.houseMaps); 
     }
 
-    editVedicBoundariesCoords(id, updatedVedicCoords) {
+    editVedicBoundariesCoords(id,updatedVedicCoords) {
         this.houseMaps = this.houseMaps.map(houseMap =>
-            houseMap.id === id ? {
+            houseMap.id === id ? { 
                 id: houseMap.id,
                 stage: houseMap.stage,
                 imageData: houseMap.imageData,
@@ -105,30 +66,12 @@ export default class Model {
             } : houseMap
         )
 
-        this._commit(this.houseMaps);
-        var formData = new FormData();
-        formData.append('id', houseMap.id);
-        formData.append('stage', houseMap.stage);
-        formData.append('imageData', JSON.stringify(houseMap.imageData));
-        formData.append('type', houseMap.type);
-        formData.append('vedicBoundariesCoords', JSON.stringify(updatedVedicCoords));
-        formData.append('customBoundariesCoords', JSON.stringify(houseMap.customBoundariesCoords));
-        formData.append('centroid', JSON.stringify(houseMap.centroid));
-        formData.append('faceCoords', JSON.stringify(houseMap.faceCoords));
-        formData.append('dimension', JSON.stringify(houseMap.faceCoords));
-        formData.append('complete', houseMap.complete);
-        formData.append('propertyId', propertyId);
-        var url = base_url + "/Main/updatehouseMaps";
-        AjaxPost(formData, url, updateHouseMapssuccess, AjaxError);
-        function updateHouseMapssuccess(content,targetTextarea) {
-            var result = JSON.parse(content);
-            console.log(result)            
-        }
+        this._commit(this.houseMaps); 
     }
 
     editCustomBoundariesCoords(id, updatedCustomCoords) {
         this.houseMaps = this.houseMaps.map(houseMap =>
-            houseMap.id === id ? {
+            houseMap.id === id ? { 
                 id: houseMap.id,
                 stage: houseMap.stage,
                 imageData: houseMap.imageData,
@@ -142,30 +85,12 @@ export default class Model {
             } : houseMap
         )
 
-        // this._commit(this.houseMaps);
-        // var formData = new FormData();
-        // formData.append('id', houseMap.id);
-        // formData.append('stage', houseMap.stage);
-        // formData.append('imageData', JSON.stringify(houseMap.imageData));
-        // formData.append('type', houseMap.type);
-        // formData.append('vedicBoundariesCoords', JSON.stringify(houseMap.vedicBoundariesCoords));
-        // formData.append('customBoundariesCoords', JSON.stringify(updatedCustomCoords));
-        // formData.append('centroid', JSON.stringify(houseMap.centroid));
-        // formData.append('faceCoords', JSON.stringify(houseMap.faceCoords));
-        // formData.append('dimension', JSON.stringify(houseMap.dimenision));
-        // formData.append('complete', houseMap.complete);
-        // formData.append('propertyId', propertyId);
-        // var url = base_url + "/Main/updatehouseMaps";
-        // AjaxPost(formData, url, updateHouseMapssuccess, AjaxError);
-        // function updateHouseMapssuccess(content,targetTextarea) {
-        //     var result = JSON.parse(content);
-        //     console.log(result)            
-        // }
+        this._commit(this.houseMaps);
     }
 
     editCentroid(id, updatedCentroid) {
         this.houseMaps = this.houseMaps.map(houseMap =>
-            houseMap.id === id ? {
+            houseMap.id === id ? { 
                 id: houseMap.id,
                 stage: houseMap.stage,
                 imageData: houseMap.imageData,
@@ -184,7 +109,7 @@ export default class Model {
 
     editFaceCoords(id, updatedFaceCoords) {
         this.houseMaps = this.houseMaps.map(houseMap =>
-            houseMap.id === id ? {
+            houseMap.id === id ? { 
                 id: houseMap.id,
                 stage: houseMap.stage,
                 imageData: houseMap.imageData,
@@ -203,7 +128,7 @@ export default class Model {
 
     editDimension(id, updatedDimension) {
         this.houseMaps = this.houseMaps.map(houseMap =>
-            houseMap.id === id ? {
+            houseMap.id === id ? { 
                 id: houseMap.id,
                 stage: houseMap.stage,
                 imageData: houseMap.imageData,
@@ -223,7 +148,7 @@ export default class Model {
     // Alter stage according to completion
     editStage(id, updatedStage) {
         this.houseMaps = this.houseMaps.map(houseMap =>
-            houseMap.id === id ? {
+            houseMap.id === id ? { 
                 id: houseMap.id,
                 stage: updatedStage,
                 imageData: houseMap.imageData,
@@ -243,7 +168,7 @@ export default class Model {
     // Processing is complete
     complete(id) {
         this.houseMaps = this.houseMaps.map(houseMap =>
-            houseMap.id === id ? {
+            houseMap.id === id ? { 
                 id: houseMap.id,
                 stage: updatedStage,
                 imageData: houseMap.imageData,
@@ -275,13 +200,13 @@ export default class Model {
     // getFacingDegree() {
     //     return this.houseMaps[0].facingDegree;
     // }
-
+    
     hasHouseMap() {
-        return this.houseMaps.filter(houseMap => houseMap.id == id ? true : false)
+        return this.houseMaps.filter( houseMap => houseMap.id == id ? true: false )
     }
 
     getHouseMap(id) {
-        return this.houseMaps.filter(houseMap => houseMap.id == id ? houseMap : null)
+        return this.houseMaps.filter( houseMap => houseMap.id == id ? houseMap : null )
     }
 
     deleteHouseMap(id) {

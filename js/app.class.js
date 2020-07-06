@@ -423,7 +423,7 @@ class App {
                 break;
                 case "mvpc" : {
                   let data = {
-                    src: `${that.BASE_URL}assets/images/mvpc.svg`,
+                    src: `${that.BASE_URL}assets/images/mvm.svg`,
                     width: 400,
                     height: 400
                   }

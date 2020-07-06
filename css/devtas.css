@@ -5,23 +5,23 @@
 
 @font-face {
     font-family: "Raleway-Thin";
-    src: url("/assets/fonts/Raleway-Thin.ttf");
+    src: url("/vastuteq//assets/fonts/Raleway-Thin.ttf");
   }
   @font-face {
     font-family: "Raleway-Light";
-    src: url("/assets/fonts/Raleway-Light.ttf");
+    src: url("/vastuteq//assets/fonts/Raleway-Light.ttf");
   }
   @font-face {
     font-family: "Raleway-Regular";
-    src: url("/assets/fonts/Raleway-Regular.ttf");
+    src: url("/vastuteq/assets/fonts/Raleway-Regular.ttf");
   }
   @font-face {
     font-family: "Raleway-SemiBold";
-    src: url("/assets/fonts/Raleway-SemiBold.ttf");
+    src: url("/vastuteq//assets/fonts/Raleway-SemiBold.ttf");
   }
   @font-face {
     font-family: "Raleway-Bold";
-    src: url("/assets/fonts/Raleway-Bold.ttf");
+    src: url("/vastuteq//assets/fonts/Raleway-Bold.ttf");
   }
 
 .text-sm {

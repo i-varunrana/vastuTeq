@@ -1,64 +1,3 @@
-<<<<<<< HEAD
-/***
--------------------- A P P  F O N T S --------------------
-***/
-
-@font-face {
-    font-family: "Raleway-Thin";
-    src: url("/vastuteq/assets/fonts/Raleway-Thin.ttf");
-  }
-  @font-face {
-    font-family: "Raleway-Light";
-    src: url("/vastuteq/assets/fonts/Raleway-Light.ttf");
-  }
-  @font-face {
-    font-family: "Raleway-Regular";
-    src: url("/vastuteq/assets/fonts/Raleway-Regular.ttf");
-  }
-  @font-face {
-    font-family: "Raleway-SemiBold";
-    src: url("/vastuteq/assets/fonts/Raleway-SemiBold.ttf");
-  }
-  @font-face {
-    font-family: "Raleway-Bold";
-    src: url("/vastuteq/assets/fonts/Raleway-Bold.ttf");
-  }
-
-.text-sm {
-    font-size: 12px !important;
-}  
-
-.overflow-elipsis {
-  white-space: nowrap; 
-  width: 90px; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
-}
-
-.form-check-label {
-  line-height: 10px;
-}
-
-
-
-body {
-    color: black  !important;
-    font-family: 'Raleway-Light';
-}  
-
-.ayadi-container {
-    width: 100%;
-    height: 100vh;
-}
-
-.card {
-    height: 590px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.display-report-area {
-  height: 100%;
-=======
 /***
 -------------------- A P P  F O N T S --------------------
 ***/
@@ -73,7 +12,7 @@ body {
   }
   @font-face {
     font-family: "Raleway-Regular";
-    src: url("/assets/fonts/Raleway-Regular.ttf");
+    src: url("/vastuteq/assets/fonts/Raleway-Regular.ttf");
   }
   @font-face {
     font-family: "Raleway-SemiBold";
@@ -102,7 +41,8 @@ body {
 
 
 body {
-    font-family: 'Raleway-Light';
+    color: black  !important;
+    font-family: 'Raleway-Regular';
 }  
 
 .ayadi-container {
@@ -117,5 +57,4 @@ body {
 
 .display-report-area {
   height: 100%;
->>>>>>> d6d84c463f9d83b850f422513dc83f8e30cdc93a
 }
