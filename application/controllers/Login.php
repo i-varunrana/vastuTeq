@@ -33,13 +33,19 @@ class Login extends ci_controller
 			$email = $_POST['email'];
 			$password = $_POST['password'];
 
-			$result = $this->MainModel->selectAllFromWhere("login",Array("email"=>$email,"password"=>$password,"isAdmin"=>0));
+			$result = $this->MainModel->selectAllFromWhere("login",Array("email"=>$email,"password"=>$password));
 
 			if($result)
 			{
-
+				if($result[0]['isAdmin']){
 				$this->session->set_userdata("userInfo",$result[0]);
-				redirect("Main");
+				redirect(base_url("Main/admin"));
+				}else{
+				$this->session->set_userdata("userInfo",$result[0]);
+				redirect(base_url("Main"));
+				}
+				
+				
 
 			}
 			else
@@ -56,7 +62,6 @@ class Login extends ci_controller
 		}
 		
 	}
-	
 }
 
 ?>

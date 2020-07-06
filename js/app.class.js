@@ -425,6 +425,7 @@ class App {
 
                     that.mapId = Math.floor(1000000000 + Math.random() * 9000000000);
                     that.houseMap = that.model.add({id: that.mapId, image: {src: img.src, width: this.width, height: this.height}});
+                    // alert('hello');
                     that.start();
                     that.DISABLE = false;
 

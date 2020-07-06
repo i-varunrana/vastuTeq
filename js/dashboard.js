@@ -53,144 +53,50 @@ $(document).ready(function () {
 	});
 
 
+	// $('#clientInfo').submit(function (e) {
+	// 	e.preventDefault;
+	// 	let mNo = $("[name='mNumber']").val();
+	// 	if (mNo.trim().length != 10) {
+	// 		showAlert('Mobile No. should be 10 digit', 'danger')
+	// 		return false;
+	// 	} else {
+	// 		var formData = new FormData(this);
+	// 		// formData.append('id', id);
+	// 		var url = base_url + "/Main/addClient";
+	// 		AjaxPost(formData, url, addsuccess, AjaxError);
+	// 	}
+		
 
-	// SAVE INFO BUTTON
-	// var $saveInfoButton = $('button .save-info');
+	// })
 
-	let propertyInfoData = [getPropertyInfoItem()];
-	function getPropertyInfoItem(name = '', category = '', type = '', address = '') {
-		return { name, category, type, address };
-	}
-	function inputChangeHandler(e) {
-		let { name, value } = e.target;
-		let key = $(e.target).data('key');
-		propertyInfoData[key][name] = value;
-		//console.log(propertyInfoData)
-	}
-	function loadPropertyInfo() {
-		$('#propertyForm').empty();
-		for (let key in propertyInfoData) {
-			let html = $(`<div> 
-		<div class="form-row"><h5 class="mb-4 col-md-11">Property Info</h5>
-		<button type="button" class="close col-md-1 minus" value='${propertyInfoData[key]}'>
-              <span aria-hidden="true">&minus;</span>
-			</button>
-			</div>
-		<div class="form-row">
-		  <div class="form-group col-md-4">
-			<label for="inputEmail4">Name</label>
-			<input
-			  type="text"
-			  class="form-control form-control-sm"
-			  name="name"
-			  value='${propertyInfoData[key].name}'
-			  placeholder="property name"
-			/>
-		  </div>
-		  <div class="form-group col-md-4">
-			<label for="inputEmail4">Category</label>
-			<input
-			  type="text"
-			  class="form-control form-control-sm"
-			  name="category"
-			  value='${propertyInfoData[key].category}'
-			  placeholder="property category"
-			/>
-		  </div>
-		  <div class="form-group col-md-4">
-			<label for="inputEmail4">Type</label>
-			<input
-			  type="text"
-			  class="form-control form-control-sm"
-			  name="type"
-			  value='${propertyInfoData[key].type}'
-			  placeholder="property type"
-			/>
-		  </div>
-		</div>
-		<div class="form-row">		  
-		  <div class="form-group col-md-6">
-			<label for="inputAddress">Address</label>
-			<input
-			  type="text"
-			  class="form-control form-control-sm"
-			  name="address"
-			  value='${propertyInfoData[key].address}'
-			  placeholder="property address"
-			/>
-		  </div>
-		</div>
-		</div>`);
-
-			let inputName = html.find('[name=name]');
-			inputName.data('key', key);
-			inputName.keyup(inputChangeHandler);
-
-			let inputCategory = html.find('[name=category]');
-			inputCategory.data('key', key);
-			inputCategory.keyup(inputChangeHandler);
-
-			let inputType = html.find('[name=type]');
-			inputType.data('key', key);
-			inputType.keyup(inputChangeHandler);
-
-			// let inputOwner = html.find('[name=owner]');
-			// inputOwner.data('key', key);
-			// inputOwner.keyup(inputChangeHandler);
-
-			let inputAddress = html.find('[name=address]');
-			inputAddress.data('key', key);
-			inputAddress.keyup(inputChangeHandler);
-
-			let rButton = html.find('.minus');
-			inputAddress.data('key', key);
-			// inputAddress.keyup(inputChangeHandler);
-
-
-			//console.log(inputAddress)
-
-			$('#propertyForm').append(html)
-		}
-	}
-
-	$('.save-info').on('click', function () {
-		console.log(propertyInfoData)
-
-	})
-
-
-
-
-	//Add More Property functionality
-	$('#addMore').on('click', function () {
-		propertyInfoData.push(getPropertyInfoItem());
-		loadPropertyInfo();
-	})
-	function remove(array, key, value) {
-		const index = array.findIndex(obj => obj[key] === value);
-		return index >= 0 ? [
-			...array.slice(0, index),
-			...array.slice(index + 1)
-		] : array;
-	}
-	$('#propertyForm').on('click', '.minus', function () {
-		console.log($(this).attr('value'))
-		const newData = remove(propertyInfoData, "value", $(this).attr('value'));
-		$(this).parent().parent().remove()
-	})
-	loadPropertyInfo();
-
-	$('#clientInfo').submit(function (e) {
-		e.preventDefault;
+	$('.save-client-info').on('click',function(e) {
+		e.preventDefault();
 		let mNo = $("[name='mNumber']").val();
 		if (mNo.trim().length != 10) {
 			showAlert('Mobile No. should be 10 digit', 'danger')
 			return false;
 		} else {
-			return true
+			var formData = new FormData(document.getElementById('clientInfo'));
+			// formData.append('id', id);
+			var url = base_url + "/Main/addClient";
+			AjaxPost(formData, url, addsuccess, AjaxError);
 		}
 
 	})
+	function addsuccess(content,targetTextarea) {
+		var result = JSON.parse(content);
+		// console.log(result)
+		if (result[0] == "success") {
+			let html = `<option value="${result[2]}">${result[3]}</option>`			
+			$('#clients').append(html);
+			showAlert(result[1], 'success');
+			$('#modal1').toggle()
+			$('.modal-backdrop').toggle()
+		
+		} else {
+			showAlert(result[1], 'danger');		
+		}
+	}
 
 	$('#category').change(function () {
 		let value = $('option:selected').val()

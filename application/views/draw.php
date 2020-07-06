@@ -34,6 +34,14 @@
     <script src="<?php echo base_url('js/app.class.js')?>" type="module" defer></script>
     <!-- MODAL JS -->
     <script src="<?php echo base_url('js/modal.js')?>"></script>
+     <!-- Ajax library -->
+     <script src="<?php echo base_url('js/MyScriptLibrary.js') ?>"></script>
+    <!-- Notify library -->
+    <script src="<?php echo base_url('js/bootstrap-notify.min.js') ?>"></script>
+    <!-- creating base_url to use in script -->
+    <script>const base_url = '<?php echo base_url(); ?>'</script>
+    // setting propertyid
+    <script>const propertyId = '<?php echo $propertId; ?>'</script>
 
 </head>
 
