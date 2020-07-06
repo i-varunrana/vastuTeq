@@ -1,0 +1,89 @@
+
+/***
+-------------------- A P P  F O N T S --------------------
+***/
+
+@font-face {
+    font-family: "Raleway-Thin";
+    src: url("/assets/fonts/Raleway-Thin.ttf");
+  }
+  @font-face {
+    font-family: "Raleway-Light";
+    src: url("/assets/fonts/Raleway-Light.ttf");
+  }
+  @font-face {
+    font-family: "Raleway-Regular";
+    src: url("/assets/fonts/Raleway-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Raleway-SemiBold";
+    src: url("/assets/fonts/Raleway-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: "Raleway-Bold";
+    src: url("/assets/fonts/Raleway-Bold.ttf");
+  }
+
+.text-sm {
+    font-size: 13px;
+}  
+
+body {
+    font-family: 'Raleway-Regular';
+    overflow: hidden;
+}  
+
+.leftside {
+    display: grid;
+    grid-template-columns: repeat(9, 70px);
+    grid-template-rows: repeat(9, 70px);
+    grid-gap: 0rem;
+}
+
+.devta-btn {
+
+    font-family: 'Raleway-semiBold';
+    font-size: 9px;
+    transition: 350ms ease-in-out all;
+}
+
+.devta-btn:hover {
+    scale: 0.5;
+}
+
+.modal-dialog {
+    min-width: 1000px;
+}
+
+.modal-content{
+    min-height: 550px;
+}
+
+#devtaTitle {
+    font-family: 'Raleway-Regular';
+}
+
+#devta-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.title {
+    font-family: 'Raleway-SemiBold';
+    font-size: 15px;
+}
+
+.desc {
+    font-size: 16px;
+}
+
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 550px;
+    overflow-y: auto;
+}
