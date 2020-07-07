@@ -1,2 +1,2 @@
-application\views\draw.php
-js\helper\modal.class.js
+application/views/draw.php
+js/helper/modal.class.js
