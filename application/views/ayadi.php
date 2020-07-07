@@ -25,6 +25,7 @@
     <!-- FONTAWESOME JS -->
     <script src="<?php echo base_url('assets/fontawesome/js/all.min.js')?>"></script>
     <!-- CUSTOM JS -->
+
 </head>
 <body>
     <section class="ayadi-container p-4">
@@ -223,6 +224,6 @@
         </div>
     </section>
 
-    <script src="js/ayadi.js" type="module" defer></script>
+    <script src="<?php echo base_url('js/ayadi.js')?>" type="module" defer></script>
 </body>
 </html>

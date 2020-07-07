@@ -12,7 +12,7 @@
   }
   @font-face {
     font-family: "Raleway-Regular";
-    src: url("/assets/fonts/Raleway-Regular.ttf");
+    src: url("/vastuteq/assets/fonts/Raleway-Regular.ttf");
   }
   @font-face {
     font-family: "Raleway-SemiBold";
@@ -41,7 +41,8 @@
 
 
 body {
-    font-family: 'Raleway-Light';
+    color: black  !important;
+    font-family: 'Raleway-Regular';
 }  
 
 .ayadi-container {

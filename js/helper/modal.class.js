@@ -61,13 +61,13 @@ export default class modal {
         else
         DATA = this.DIRECTION_THIRTYTWO;
 
-        let scale = Math.pow(parseFloat(dimension.scale/dimension.distance), 2);
+        // let scale = Math.pow(parseFloat(dimension.scale/dimension.distance), 2);
 
-        let newAreaArr = areaArr.map(function(d){
-            return d * scale;
-        })
+        // let newAreaArr = areaArr.map(function(d){
+        //     return d * sc;
+        // })
 
-        let data = newAreaArr.map(function (d, i) {
+        let data = areaArr.map(function (d, i) {
             return {
               name: DATA[i].name,
               color: DATA[i].color,
@@ -75,16 +75,16 @@ export default class modal {
             };
         });
 
-        let sum = newAreaArr.reduce(function(a,b){
+        let sum = areaArr.reduce(function(a,b){
             return a + b;
         });
 
-        let LOB = (newAreaArr.length != 0) ? sum / newAreaArr.length : 0;
+        let LOB = (areaArr.length != 0) ? sum / areaArr.length : 0;
         
-        let maxValue = d3.max(newAreaArr);
+        let maxValue = d3.max(areaArr);
         let UB = LOB + ((maxValue - LOB)/2);
 
-        let minValue = d3.min(newAreaArr);
+        let minValue = d3.min(areaArr);
         let LB = LOB - ((LOB - minValue)/2);
 
         // console.log("LOB UP LB :",LOB,UB,LB);
@@ -95,7 +95,7 @@ export default class modal {
         const chart = svg.append('g')
         .attr('width', `${width + margin}`)
         .attr('height', `${height + margin}`)
-        .style('transform', 'translate(38px,83px)');
+        .style('transform', 'translate(55px,83px)');
 
         const xScale = d3.scaleBand()
             .range([0, width])

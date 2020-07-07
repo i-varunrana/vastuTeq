@@ -47,7 +47,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Client & Property</li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Client</li>
                 </ol>
             </nav>
             <div class="dynamicbar-right">
@@ -78,7 +78,7 @@
             <div class="card col-md-12 p-0 mt-5">
                 <div class="card-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        Property
+                        Add Client
                     </h5>
                 </div>
                 <div class="card-body">
