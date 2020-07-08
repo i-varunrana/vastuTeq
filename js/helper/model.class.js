@@ -29,6 +29,27 @@ export default class Model {
 
         this.houseMaps.push(houseMap);
         this._commit(this.houseMaps);
+        
+        //saving data in backend through ajax
+        var formData = new FormData();
+        formData.append('id', data.id);
+        formData.append('stage', 1);
+        formData.append('imageData', JSON.stringify(data.image));
+        formData.append('type', "custom");
+        formData.append('vedicBoundariesCoords', []);
+        formData.append('customBoundariesCoords', []);
+        formData.append('centroid', []);
+        formData.append('faceCoords', []);
+        formData.append('dimension', JSON.stringify({}));
+        formData.append('complete', false);
+        formData.append('propertyId', propertyId);
+        var url = BASE_URL + "/Main/addhouseMaps";
+        AjaxPost(formData, url, addHouseMapssuccess, AjaxError);
+        function addHouseMapssuccess(content,targetTextarea) {
+            var result = JSON.parse(content);
+            console.log(result)            
+        }
+        
     }
 
     editType(id, updatedType) {
@@ -48,6 +69,24 @@ export default class Model {
         )
 
         this._commit(this.houseMaps); 
+        var formData = new FormData();
+        formData.append('id', houseMap.id);
+        formData.append('stage', houseMap.stage);
+        formData.append('imageData', JSON.stringify(houseMap.imageData));
+        formData.append('type', updatedType);
+        formData.append('vedicBoundariesCoords', JSON.stringify(houseMap.vedicBoundariesCoords));
+        formData.append('customBoundariesCoords', JSON.stringify(houseMap.customBoundariesCoords));
+        formData.append('centroid', JSON.stringify(houseMap.centroid));
+        formData.append('faceCoords', JSON.stringify(houseMap.faceCoords));
+        formData.append('dimension', JSON.stringify(houseMap.faceCoords));
+        formData.append('complete', houseMap.complete);
+        formData.append('propertyId', propertyId);
+        var url = BASE_URL + "/Main/updatehouseMaps";
+        AjaxPost(formData, url, updateHouseMapssuccess, AjaxError);
+        function updateHouseMapssuccess(content,targetTextarea) {
+            var result = JSON.parse(content);
+            console.log(result)            
+        }
     }
 
     editVedicBoundariesCoords(id,updatedVedicCoords) {
@@ -67,9 +106,28 @@ export default class Model {
         )
 
         this._commit(this.houseMaps); 
+        var formData = new FormData();
+        formData.append('id', houseMap.id);
+        formData.append('stage', houseMap.stage);
+        formData.append('imageData', JSON.stringify(houseMap.imageData));
+        formData.append('type', houseMap.type);
+        formData.append('vedicBoundariesCoords', JSON.stringify(updatedVedicCoords));
+        formData.append('customBoundariesCoords', JSON.stringify(houseMap.customBoundariesCoords));
+        formData.append('centroid', JSON.stringify(houseMap.centroid));
+        formData.append('faceCoords', JSON.stringify(houseMap.faceCoords));
+        formData.append('dimension', JSON.stringify(houseMap.faceCoords));
+        formData.append('complete', houseMap.complete);
+        formData.append('propertyId', propertyId);
+        var url = BASE_URL + "/Main/updatehouseMaps";
+        AjaxPost(formData, url, updateHouseMapssuccess, AjaxError);
+        function updateHouseMapssuccess(content,targetTextarea) {
+            var result = JSON.parse(content);
+            console.log(result)            
+        }
     }
 
     editCustomBoundariesCoords(id, updatedCustomCoords) {
+        console.log(this.houseMaps);
         this.houseMaps = this.houseMaps.map(houseMap =>
             houseMap.id === id ? { 
                 id: houseMap.id,
@@ -82,10 +140,28 @@ export default class Model {
                 faceCoords: houseMap.faceCoords,
                 dimenision: houseMap.dimenision,
                 complete: houseMap.complete
-            } : houseMap
+            } : houseMap            
         )
 
-        this._commit(this.houseMaps);
+        // this._commit(this.houseMaps);
+        // var formData = new FormData();
+        // formData.append('id', houseMap.id);
+        // formData.append('stage', houseMap.stage);
+        // formData.append('imageData', JSON.stringify(houseMap.imageData));
+        // formData.append('type', houseMap.type);
+        // formData.append('vedicBoundariesCoords', JSON.stringify(houseMap.vedicBoundariesCoords));
+        // formData.append('customBoundariesCoords', JSON.stringify(updatedCustomCoords));
+        // formData.append('centroid', JSON.stringify(houseMap.centroid));
+        // formData.append('faceCoords', JSON.stringify(houseMap.faceCoords));
+        // formData.append('dimension', JSON.stringify(houseMap.dimenision));
+        // formData.append('complete', houseMap.complete);
+        // formData.append('propertyId', propertyId);
+        // var url = BASE_URL + "/Main/updatehouseMaps";
+        // AjaxPost(formData, url, updateHouseMapssuccess, AjaxError);
+        // function updateHouseMapssuccess(content,targetTextarea) {
+        //     var result = JSON.parse(content);
+        //     console.log(result)            
+        // }
     }
 
     editCentroid(id, updatedCentroid) {

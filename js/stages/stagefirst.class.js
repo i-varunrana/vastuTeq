@@ -117,7 +117,8 @@ export default class StageFirst {
             g.append('text').text('P'+i)
             .attr('x', this.points[i][0]-10)
             .attr('y', this.points[i][1]-7)
-            .attr('fill','#fb5665');
+            .attr('fill','#4656E9')
+            .attr('font-weight','700');
 
         }
 

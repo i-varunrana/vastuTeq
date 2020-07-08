@@ -36,22 +36,70 @@
 </head>
 
 <body>
-    <!-- 
+<!-- 
     //////////////////////////////// --- H E A D E R ---  ////////////////////////////////
     -->
     <section class="header" style="position:unset">
-        <div class="title-bar">
-            <img class="logo" src="<?php echo base_url('assets/logo/logo2.svg') ?>" alt="logo" width="130">
+        <div class="title-bar" style="justify-content:left;">
+            <img class="logo" style="margin-left:20px" src="<?php echo base_url('assets/logo/logo2.svg') ?>" alt="logo" width="130">
+            <!-- M E N U  I T E M S -->
+            <div class="menu-sidebar">
+                <ul class="nav menu" style="float:right">
+                    <li class="nav-item">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main') ?>">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/propertyInfo') ?>">Client</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/propertyInfo') ?>">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/ayadhi') ?>">Ayadi Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/devtas') ?>">Devtas</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="menu-wrap">
+                    <div class="menu-sidebar">
+                        <ul class="menu">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Client</a></li>
+                            <li><a href="#">Properties</a></li> -->
+            <!-- <li class="menu-item-has-children"><a href="#">Click The Arrow</a>
+                    <span class="sidebar-menu-arrow"></span>
+                    <ul class="sub-menu">
+                        <li><a href="#">Alignment</a></li>
+                        <li><a href="#">Markup</a></li>
+                        <li><a href="#">Comments</a></li>
+                    </ul>
+                </li> -->
+            <!-- <li><a target="_blank" href="<?php echo base_url('Main/ayadhi') ?>">Ayadi Calculator</a></li>
+                            <li><a target="_blank" href="<?php echo base_url('Main/devtas') ?>">Devtas</a></li>
+                        </ul>
+                    </div>
+                </div> -->
         </div>
         <div id="dynamicBar">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Client & Property</li>
+                    <li class="breadcrumb-item"><a href="<?php echo base_url('Main') ?>">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Properties</li>
                 </ol>
             </nav>
             <div class="dynamicbar-right">
-                <a class="dropdown-item" href="<?php echo base_url('Main/index') ?>"><i class="fas fa-sign-out-alt"></i>Back</a>
+              <!--  <a href="<?php echo base_url('Main/propertyInfo') ?>" class="btn btn-sm btn-outline rounded-0"><i class="fas fa-plus"></i>&nbsp;&nbsp;New Project</a>-->
+                <img class="profile thumbnail rounded-circle" src="<?php echo base_url('assets/images/thumbnail.png') ?>" alt="user" width="20" id="profileButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileButton">
+                    <a class="dropdown-item modal__trigger" href="#" data-modal="#modal3"><i class="fas fa-cog"></i>&nbsp;&nbsp;Setting</a>
+                    <a class="dropdown-item" href="<?php echo base_url('Main/logout') ?>"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out</a>
+                </div>
             </div>
         </div>
     </section>

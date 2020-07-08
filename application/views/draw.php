@@ -36,6 +36,12 @@
     <script src="<?php echo base_url('js/app.class.js')?>" type="module" defer></script>
     <!-- MODAL JS -->
     <script src="<?php echo base_url('js/modal.js')?>"></script>
+     <!-- Ajax library -->
+     <script src="<?php echo base_url('js/MyScriptLibrary.js') ?>"></script>
+    <!-- Notify library -->
+    <script src="<?php echo base_url('js/bootstrap-notify.min.js') ?>"></script>    
+    <!-- setting propertyid -->
+    <script>const propertyId = '<?php echo $propertId; ?>'</script>
 
 </head>
 
@@ -43,10 +49,55 @@
     <!-- 
     //////////////////////////////// --- H E A D E R ---  ////////////////////////////////
     -->
-    <section class="header">
-        <div class="title-bar">
-            <img class="logo" src="<?php echo base_url('assets/logo/logo2.svg')?>" alt="logo" width="130">
+    <section class="header" >
+    <section class="header" style="position:unset">
+        <div class="title-bar" style="justify-content:left;">
+            <img class="logo" style="margin-left:20px" src="<?php echo base_url('assets/logo/logo2.svg') ?>" alt="logo" width="130">
+            <!-- M E N U  I T E M S -->
+            <div class="menu-sidebar">
+                <ul class="nav menu" style="float:right">
+                    <li class="nav-item">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main') ?>">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/ayadhi') ?>">Ayadi Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/devtas') ?>">Devtas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/propertyInfo') ?>" ><i class="fas fa-plus"></i>&nbsp;&nbsp;New Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <img class="profile thumbnail rounded-circle" src="<?php echo base_url('assets/images/thumbnail.png') ?>" alt="user" width="20" id="profileButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileButton">
+                            <a class="dropdown-item modal__trigger" href="#" data-modal="#modal3"><i class="fas fa-cog"></i>&nbsp;&nbsp;Setting</a>
+                            <a class="dropdown-item" href="<?php echo base_url('Main/logout') ?>"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out</a>
+                        </div>
+                    </li>
+                </ul>                
+            </div>
         </div>
+        <!-- <div id="dynamicBar">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Drafts</li>
+                </ol>
+            </nav>
+            <div class="dynamicbar-right">
+                <a href="<?php echo base_url('Main/propertyInfo') ?>" class="btn btn-sm btn-outline rounded-0"><i class="fas fa-plus"></i>&nbsp;&nbsp;New Project</a>
+                <img class="profile thumbnail rounded-circle" src="<?php echo base_url('assets/images/thumbnail.png') ?>" alt="user" width="20" id="profileButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileButton">
+                    <a class="dropdown-item modal__trigger" href="#" data-modal="#modal3"><i class="fas fa-cog"></i>&nbsp;&nbsp;Setting</a>
+                    <a class="dropdown-item" href="<?php echo base_url('Main/logout') ?>"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out</a>
+                </div>
+            </div>
+        </div> -->
+    </section>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
