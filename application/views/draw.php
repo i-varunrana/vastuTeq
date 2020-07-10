@@ -41,7 +41,7 @@
     <!-- Notify library -->
     <script src="<?php echo base_url('js/bootstrap-notify.min.js') ?>"></script>    
     <!-- setting propertyid -->
-    <script>const propertyId = '<?php echo $propertId; ?>'</script>
+    <!-- <script>const propertyId = '<?php echo $propertId; ?>'</script> -->
 
 </head>
 

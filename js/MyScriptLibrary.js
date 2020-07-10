@@ -22,6 +22,7 @@ function AjaxPost(formData, url, successCallBack, errorCallBack, args = null) {
 }
 
 function AjaxError(error) {
+    console.log(error)
     showAlert("Please contact IT. ", 'error');
 }
 

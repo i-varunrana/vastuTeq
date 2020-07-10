@@ -52,56 +52,40 @@
                         <a href="<?php echo base_url('Main') ?>">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo base_url('Main/propertyInfo') ?>">Client</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?php echo base_url('Main/propertyInfo') ?>">Properties</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="<?php echo base_url('Main/ayadhi') ?>">Ayadi Calculator</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?php echo base_url('Main/devtas') ?>">Devtas</a>
                     </li>
-                </ul>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/propertyInfo') ?>" ><i class="fas fa-plus"></i>&nbsp;&nbsp;New Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <img class="profile thumbnail rounded-circle" src="<?php echo base_url('assets/images/thumbnail.png') ?>" alt="user" width="20" id="profileButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileButton">
+                            <a class="dropdown-item modal__trigger" href="#" data-modal="#modal3"><i class="fas fa-cog"></i>&nbsp;&nbsp;Setting</a>
+                            <a class="dropdown-item" href="<?php echo base_url('Main/logout') ?>"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out</a>
+                        </div>
+                    </li>
+                </ul>                
             </div>
-            <!-- <div class="menu-wrap">
-                    <div class="menu-sidebar">
-                        <ul class="menu">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Client</a></li>
-                            <li><a href="#">Properties</a></li> -->
-            <!-- <li class="menu-item-has-children"><a href="#">Click The Arrow</a>
-                    <span class="sidebar-menu-arrow"></span>
-                    <ul class="sub-menu">
-                        <li><a href="#">Alignment</a></li>
-                        <li><a href="#">Markup</a></li>
-                        <li><a href="#">Comments</a></li>
-                    </ul>
-                </li> -->
-            <!-- <li><a target="_blank" href="<?php echo base_url('Main/ayadhi') ?>">Ayadi Calculator</a></li>
-                            <li><a target="_blank" href="<?php echo base_url('Main/devtas') ?>">Devtas</a></li>
-                        </ul>
-                    </div>
-                </div> -->
         </div>
-        <div id="dynamicBar">
+        <!-- <div id="dynamicBar">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?php echo base_url('Main') ?>">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Add Properties</li>
+                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Drafts</li>
                 </ol>
             </nav>
             <div class="dynamicbar-right">
-              <!--  <a href="<?php echo base_url('Main/propertyInfo') ?>" class="btn btn-sm btn-outline rounded-0"><i class="fas fa-plus"></i>&nbsp;&nbsp;New Project</a>-->
+                <a href="<?php echo base_url('Main/propertyInfo') ?>" class="btn btn-sm btn-outline rounded-0"><i class="fas fa-plus"></i>&nbsp;&nbsp;New Project</a>
                 <img class="profile thumbnail rounded-circle" src="<?php echo base_url('assets/images/thumbnail.png') ?>" alt="user" width="20" id="profileButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileButton">
                     <a class="dropdown-item modal__trigger" href="#" data-modal="#modal3"><i class="fas fa-cog"></i>&nbsp;&nbsp;Setting</a>
                     <a class="dropdown-item" href="<?php echo base_url('Main/logout') ?>"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
 

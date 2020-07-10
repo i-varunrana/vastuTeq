@@ -15,6 +15,22 @@
            {remainder: 10, result: `ABUNDANCE OF GOOD`},
            {remainder: 11, result: `NAME AND FAME`}
         ];
+//   console.log(AAYA);
+//         for(let i=0;i<AAYA.length;i++){
+//             var formData = new FormData();
+//             formData.append('name', 'AAYA');
+//             formData.append('rem', AAYA[i]['remainder']);
+//             formData.append('rb', '');
+//             formData.append('result', AAYA[i]['result']);
+//             formData.append('face', '');
+//             // console.log(devtaName)
+//             var url = BASE_URL + "/Main/addDevtas";
+//             AjaxPost(formData, url, devtaSuccess, AjaxError);
+//         }
+//         function devtaSuccess(content, targetTextarea) {
+//             console.log(JSON.parse(content))
+//         }
+       
 
 let VYAYA = [
             {remainder: 0, result: `CONDUCTIVE TO HAPPINESS`},
@@ -29,6 +45,23 @@ let VYAYA = [
             {remainder: 9, result: `HAS GOOD FRIENDS`}
         ];
 
+        // console.log(VYAYA);
+        // for(let i=0;i<VYAYA.length;i++){
+        //     var formData = new FormData();
+        //     formData.append('name', 'VYAYA');
+        //     formData.append('rem', VYAYA[i]['remainder']);
+        //     formData.append('rb', '');
+        //     formData.append('result', VYAYA[i]['result']);
+        //     formData.append('face', '');
+        //     // console.log(devtaName)
+        //     var url = BASE_URL + "/Main/addDevtas";
+        //     AjaxPost(formData, url, devtaSuccess1, AjaxError);
+        // }
+        // function devtaSuccess1(content, targetTextarea) {
+        //     console.log(JSON.parse(content))
+        // }
+        
+
 let AMSHA = [
             {remainder: 1, amsha: "TASKARA", result: `THIEF`},
             {remainder: 2, amsha: "BHUKTI", result: `ENJOYMENT`},
@@ -40,6 +73,23 @@ let AMSHA = [
             {remainder: 8, amsha: "DARIDAN", result: `POOR`},
             {remainder: 9, amsha: "PRESHIYAN", result: `SERVANT`},
         ]
+        
+        // console.log(AMSHA);
+        // for(let i=0;i<AMSHA.length;i++){
+        //     var formData = new FormData();
+        //     formData.append('name', 'AMSHA');
+        //     formData.append('rem', AMSHA[i]['remainder']);
+        //     formData.append('rb', AMSHA[i]['amsha']);
+        //     formData.append('result', AMSHA[i]['result']);
+        //     formData.append('face', '');
+        //     // console.log(devtaName)
+        //     var url = BASE_URL + "/Main/addDevtas";
+        //     AjaxPost(formData, url, devtaSuccess2, AjaxError);
+        // }
+        // function devtaSuccess2(content, targetTextarea) {
+        //     console.log(JSON.parse(content))
+        // }
+       
 
 let YONI = [
             {remainder: 1, yoni: "DHWAJA", face: "EAST", result: `FAME,  BEST FOR CLOTH SHOP AUR DHARMSHALA`},
@@ -50,7 +100,23 @@ let YONI = [
             {remainder: 6, yoni: "KHARA", face: "NORTH WEST", result: `GOOD FOR ONLY PROSTITUTION BUSINESS, BAD FOR OTHER WORK`},
             {remainder: 7, yoni: "GAJA", face: "NORTH", result: `GOOD FOR POULTRY FARMS, FOR OTHERS DISEASE GIVING`},
             {remainder: 8, yoni: "KAAK", face: "NORTH EAST", result: `GOOD FOR MEDITATION`},
-        ];
+        ];       
+        
+        // console.log(YONI);
+        // for(let i=0;i<YONI.length;i++){
+        //     var formData = new FormData();
+        //     formData.append('name', 'YONI');
+        //     formData.append('rem', YONI[i]['remainder']);
+        //     formData.append('rb', YONI[i]['yoni']);
+        //     formData.append('result', YONI[i]['result']);
+        //     formData.append('face', YONI[i]['face']);
+        //     // console.log(devtaName)
+        //     var url = BASE_URL + "/Main/addDevtas";
+        //     AjaxPost(formData, url, devtaSuccess3, AjaxError);
+        // }
+        // function devtaSuccess3(content, targetTextarea) {
+        //     console.log(JSON.parse(content))
+        // }
 
 let VARA = [
             {remainder: 1, day: "SUNDAY", result: `NOT FAVOURABLE`},
@@ -61,6 +127,23 @@ let VARA = [
             {remainder: 6, day: "FRIDAY", result: `FAVOURABLE`},
             {remainder: 7, day: "SATURDAY", result: `NOT FAVOURABLE`},
         ];
+
+        // console.log(VARA);
+        // for(let i=0;i<VARA.length;i++){
+        //     var formData = new FormData();
+        //     formData.append('name', 'VARA');
+        //     formData.append('rem', VARA[i]['remainder']);
+        //     formData.append('rb', VARA[i]['day']);
+        //     formData.append('result', VARA[i]['result']);
+        //     formData.append('face', '');
+        //     // console.log(devtaName)
+        //     var url = BASE_URL + "/Main/addDevtas";
+        //     AjaxPost(formData, url, devtaSuccess4, AjaxError);
+        // }
+        // function devtaSuccess4(content, targetTextarea) {
+        //     console.log(JSON.parse(content))
+        // }
+        
 
 let TITHI = [
             {remainder: 0, tithi: "POORNIMA", result: `NOT FAVOURABLE * MANSARA DOES NOT CONSIDER POORANMASI AS UNFAVOURABLE`},
@@ -94,9 +177,23 @@ let TITHI = [
             {remainder: 28, tithi: "TRAYODASHI", result: `FAVOURABLE`},
             {remainder: 29, tithi: "CHATURDASHI", result: `NOT FAVOURABLE`}
 
-        ];
+        ];    
 
-
+        // console.log(TITHI);
+        // for(let i=0;i<TITHI.length;i++){
+        //     var formData = new FormData();
+        //     formData.append('name', 'TITHI');
+        //     formData.append('rem', TITHI[i]['remainder']);
+        //     formData.append('rb', TITHI[i]['tithi']);
+        //     formData.append('result', TITHI[i]['result']);
+        //     formData.append('face', '');
+        //     // console.log(devtaName)
+        //     var url = BASE_URL + "/Main/addDevtas";
+        //     AjaxPost(formData, url, devtaSuccess5, AjaxError);
+        // }
+        // function devtaSuccess5(content, targetTextarea) {
+        //     console.log(JSON.parse(content))
+        // }
 
 
 

@@ -27,6 +27,11 @@
     <!-- FONTAWESOME JS -->
     <script src="<?php echo base_url('assets/fontawesome/js/all.min.js') ?>"></script>
     <!-- CUSTOM JS -->
+    <script>const BASE_URL = '<?php echo base_url()?>'</script>
+    <!-- Ajax library -->
+    <script src="<?php echo base_url('js/MyScriptLibrary.js') ?>"></script>
+    <!-- Notify library -->
+    <script src="<?php echo base_url('js/bootstrap-notify.min.js') ?>"></script>
 
 </head>
 

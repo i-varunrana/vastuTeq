@@ -53,21 +53,7 @@ $(document).ready(function () {
 	});
 
 
-	// $('#clientInfo').submit(function (e) {
-	// 	e.preventDefault;
-	// 	let mNo = $("[name='mNumber']").val();
-	// 	if (mNo.trim().length != 10) {
-	// 		showAlert('Mobile No. should be 10 digit', 'danger')
-	// 		return false;
-	// 	} else {
-	// 		var formData = new FormData(this);
-	// 		// formData.append('id', id);
-	// 		var url = base_url + "/Main/addClient";
-	// 		AjaxPost(formData, url, addsuccess, AjaxError);
-	// 	}
-		
-
-	// })
+	
 
 	$('.save-client-info').on('click',function(e) {
 		e.preventDefault();

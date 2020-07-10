@@ -15,6 +15,8 @@
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="<?php echo base_url('css/main.css') ?>">
     <script>const base_url = '<?php echo base_url()?>'</script>
+   
+     
 </head>
 <body>
 <!-- 
@@ -128,6 +130,10 @@
     <script src="<?php echo base_url('assets/fontawesome/js/all.min.js')?>"></script>
     <!-- CUSTOM JS -->
     <script src="<?php echo base_url('js/devtas.js')?>"></script>
+    <!-- Ajax library -->
+    <script src="<?php echo base_url('js/MyScriptLibrary.js') ?>"></script>
+    <!-- Notify library -->
+    <script src="<?php echo base_url('js/bootstrap-notify.min.js') ?>"></script>
 
 </body>
 </html>
