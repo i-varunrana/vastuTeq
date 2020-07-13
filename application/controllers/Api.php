@@ -47,7 +47,7 @@ class Api extends REST_Controller
 	{
 		if (isset($_POST['division']) && !empty($_POST['division'])) {
 			$div = $_POST['division'];
-			$result =  $this->MainModel->selectAllFromWhere('colors', array('divisions' => $div));
+			$result =  $this->MainModel->selectAllFromTableOrderBy('colors', 'serial', 'ASC', array('divisions' => $div));
 			if (!empty($result)) {
 				echo (json_encode($result));
 			} else {
@@ -65,61 +65,85 @@ class Api extends REST_Controller
 	{
 		if (isset($_POST['remainders']) && !empty($_POST['remainders'])) {
 
-			$div = $_POST['remainders'];	
-			$keys = array_keys($_POST['remainders']);
+			$div = json_decode($_POST['remainders']['remainders'], true);
+			$keys = array_keys($div);
 			$result = [];
-			
+			// print_r($div); 
 			// print_r($keys);die;
-			for($i=0;$i<count($keys);$i++){
-				$con = array('name'=>$keys[$i],'remainder'=>$_POST['remainders'][$keys[$i]]);
+			for ($i = 0; $i < count($keys); $i++) {
+				$con = array('name' => $keys[$i], 'remainder' => $div[$keys[$i]]);
 				$result1 =  $this->MainModel->selectAllFromWhere('ayadhi',  $con);
+				// print_r($result1);die;
 				if (!empty($result1)) {
-					$result[$keys[$i]] = $result1[0];					
+					$result[$keys[$i]] = $result1[0];
 				} else {
-					$error = array('error' => 'No data found contact to IT');
-					echo json_encode($error);
-					die;
+					$result[$keys[$i]] = '';
 				}
 			}
-			
-			if(!empty($result)){
+
+			if (!empty($result)) {
 				echo json_encode($result);
-			}else{
+			} else {
 				$error = array('error' => 'Something wrong contact to IT');
-			echo json_encode($error);
+				echo json_encode($error);
 			}
-			
 		} else {
 			$error = array('error' => 'Plase enter values array');
 			echo json_encode($error);
 		}
 	}
 
-		//Api method to get divisions details i.e. 8grid data, 16 grid data, 32 grid data
-		public function getdivisions_post()
-		{
-			if (isset($_POST['grid']) && !empty($_POST['grid'])) {
-	
-				$div = strtolower($_POST['grid']);
+	//Api method to get divisions details i.e. 8grid data, 16 grid data, 32 grid data
+	public function getdivisions_post()
+	{
+		if (isset($_POST['grid']) && !empty($_POST['grid'])) {
 
-				if($div == 'eight'){
-					$result =  $this->MainModel->selectAllFromWhere('eightdirectiondata');
-				}else if($div == 'sixteen'){
-					$result =  $this->MainModel->selectAllFromWhere('sixteenzones');
-				}else{
-					$result =  $this->MainModel->selectAllFromWhere('thirtytwogates');
-				}				
-				
-				if(!empty($result)){
-					echo json_encode($result);
-				}else{
-					$error = array('error' => 'Something wrong contact to IT');
-				echo json_encode($error);
-				}
-				
+			$div = strtolower($_POST['grid']);
+
+			if ($div == 'eight') {
+				$result =  $this->MainModel->selectAllFromWhere('eightdirectiondata');
+			} else if ($div == 'sixteen') {
+				$result =  $this->MainModel->selectAllFromWhere('sixteenzones');
 			} else {
-				$error = array('error' => 'Plase enter values array');
+				$result =  $this->MainModel->selectAllFromWhere('thirtytwogates');
+			}
+
+			if (!empty($result)) {
+				echo json_encode($result);
+			} else {
+				$error = array('error' => 'Something wrong contact to IT');
 				echo json_encode($error);
 			}
+		} else {
+			$error = array('error' => 'Plase enter values array');
+			echo json_encode($error);
 		}
+	}
+
+	//Api method to get divisions details i.e. 8grid data, 16 grid data, 32 grid data with colors
+	public function getColorAndDetails_post()
+	{
+		if (isset($_POST['grid']) && !empty($_POST['grid'])) {
+
+			$div = strtolower($_POST['grid']);
+
+			if ($div == 'eight') {
+				$result =  $this->MainModel->getColorAndDetils('eightdirectiondata',$div);
+			} else if ($div == 'sixteen') {
+				$result =  $this->MainModel->getColorAndDetils('sixteenzones',$div);
+			} else {
+				$result =  $this->MainModel->getColorAndDetils('thirtytwogates',$div);
+			}
+
+			if (!empty($result)) {
+				echo json_encode($result);
+			} else {
+				$error = array('error' => 'Something wrong contact to IT');
+				echo json_encode($error);
+			}
+		} else {
+			$error = array('error' => 'Plase enter values array');
+			echo json_encode($error);
+		}
+	}
 }

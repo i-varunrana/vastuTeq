@@ -269,4 +269,15 @@ return $this->db->trans_status();
 
 		return $Id; // $maxid==NULL?1:$maxid+1;
 	}
+
+	public function getColorAndDetils($table,$division)
+	{
+		$query = "SELECT * FROM `colors` ";
+		$query .= "LEFT JOIN $table ON ";
+		$query .= "colors.name=$table.shortName ";
+		$query .= "where colors.divisions='$division'";
+		$query .= "order by $table.serial ASC";
+		$q = $this->db->query($query)->result_array();
+		return $this->db->affected_rows() ? $q : false;
+	}
 }

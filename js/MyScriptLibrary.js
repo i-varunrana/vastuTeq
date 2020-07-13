@@ -1,4 +1,5 @@
 function AjaxPost(formData, url, successCallBack, errorCallBack, args = null) {
+
     var request = new XMLHttpRequest;
     request.onreadystatechange = function () {
         try {
@@ -19,11 +20,39 @@ function AjaxPost(formData, url, successCallBack, errorCallBack, args = null) {
     }
     request.open("POST", url);
     request.send(formData);
+
+}
+
+function AjaxPostPromise(formData, url) {
+return new Promise((resolve,reject)=>{
+    var request = new XMLHttpRequest;
+    request.onreadystatechange = function () {
+        try {
+            if (this.readyState == 4 && this.status == 200) {
+                var content = request.responseText.trim();
+              
+                   // successCallBack(content, args)
+                resolve(content);
+
+            } else if (this.status == 404 || this.status == 403) {
+              
+                reject(new Error("Error: readyState= " + this.readyState + " status= " + this.status))
+            }
+        } catch (e) {
+            reject(e);
+           // errorCallBack(e);
+        }
+    }
+    request.open("POST", url);
+    request.send(formData);
+
+});
+   
 }
 
 function AjaxError(error) {
     console.log(error)
-    showAlert("Please contact IT. ", 'error');
+    showAlert("Please contact IT. ", 'danger');
 }
 
 function showAlert(errorMessage = '', Type = 'success', Delay = 2000) {

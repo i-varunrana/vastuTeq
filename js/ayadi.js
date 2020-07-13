@@ -1,203 +1,7 @@
- 
- import Template from './helper/template.class.js';
 
- let AAYA = [
-           {remainder: 0, result: `CONSIDERED GOOD FOR RELIGIOUS MERITS`},
-           {remainder: 1, result: `BECOMES POOR`},
-           {remainder: 2, result: `ILL HEALTH TO WIFE`},
-           {remainder: 3, result: `ATTRACTION OF FORTUNE`},
-           {remainder: 4, result: `VICTOTIOUS`},
-           {remainder: 5, result: `SUDDEN PLEASUNT SURPRISES`},
-           {remainder: 6, result: `RIGHTEOUS DESIRES BECOMES FRUITFUL`},
-           {remainder: 7, result: `BECOMES SPRITUALLY INCLINED`},
-           {remainder: 8, result: `ENJOYES THE GOOD THING IN LIFE`},
-           {remainder: 9, result: `ACQUIRES MUCH WEALTH`},
-           {remainder: 10, result: `ABUNDANCE OF GOOD`},
-           {remainder: 11, result: `NAME AND FAME`}
-        ];
-//   console.log(AAYA);
-//         for(let i=0;i<AAYA.length;i++){
-//             var formData = new FormData();
-//             formData.append('name', 'AAYA');
-//             formData.append('rem', AAYA[i]['remainder']);
-//             formData.append('rb', '');
-//             formData.append('result', AAYA[i]['result']);
-//             formData.append('face', '');
-//             // console.log(devtaName)
-//             var url = BASE_URL + "/Main/addDevtas";
-//             AjaxPost(formData, url, devtaSuccess, AjaxError);
-//         }
-//         function devtaSuccess(content, targetTextarea) {
-//             console.log(JSON.parse(content))
-//         }
-       
+import Template from './helper/template.class.js';
 
-let VYAYA = [
-            {remainder: 0, result: `CONDUCTIVE TO HAPPINESS`},
-            {remainder: 1, result: `ACHIEVES SUCCESS`},
-            {remainder: 2, result: `WILL BE VICTORIOUS`},
-            {remainder: 3, result: `MODERATE`},
-            {remainder: 4, result: `ENJOYS THE GOOD THINGS OF LIFE`},
-            {remainder: 5, result: `VICTORIOUS OVER ENEMIES`},
-            {remainder: 6, result: `PROBLEMS OF THE EYE`},
-            {remainder: 7, result: `ACQUIRE WEALTH`},
-            {remainder: 8, result: `IS HAPPY AND CONTENEDED ALWAYS`},
-            {remainder: 9, result: `HAS GOOD FRIENDS`}
-        ];
-
-        // console.log(VYAYA);
-        // for(let i=0;i<VYAYA.length;i++){
-        //     var formData = new FormData();
-        //     formData.append('name', 'VYAYA');
-        //     formData.append('rem', VYAYA[i]['remainder']);
-        //     formData.append('rb', '');
-        //     formData.append('result', VYAYA[i]['result']);
-        //     formData.append('face', '');
-        //     // console.log(devtaName)
-        //     var url = BASE_URL + "/Main/addDevtas";
-        //     AjaxPost(formData, url, devtaSuccess1, AjaxError);
-        // }
-        // function devtaSuccess1(content, targetTextarea) {
-        //     console.log(JSON.parse(content))
-        // }
-        
-
-let AMSHA = [
-            {remainder: 1, amsha: "TASKARA", result: `THIEF`},
-            {remainder: 2, amsha: "BHUKTI", result: `ENJOYMENT`},
-            {remainder: 3, amsha: "SAKTI", result: `POWER`},
-            {remainder: 4, amsha: "DHANYAN", result: `BLESSED`},
-            {remainder: 5, amsha: "NRUPAN", result: `KING`},
-            {remainder: 6, amsha: "KLEEPAN", result: `ALI (NEUTER)`},
-            {remainder: 7, amsha: "NIRBHEETI", result: `FEARLESSNESS`},
-            {remainder: 8, amsha: "DARIDAN", result: `POOR`},
-            {remainder: 9, amsha: "PRESHIYAN", result: `SERVANT`},
-        ]
-        
-        // console.log(AMSHA);
-        // for(let i=0;i<AMSHA.length;i++){
-        //     var formData = new FormData();
-        //     formData.append('name', 'AMSHA');
-        //     formData.append('rem', AMSHA[i]['remainder']);
-        //     formData.append('rb', AMSHA[i]['amsha']);
-        //     formData.append('result', AMSHA[i]['result']);
-        //     formData.append('face', '');
-        //     // console.log(devtaName)
-        //     var url = BASE_URL + "/Main/addDevtas";
-        //     AjaxPost(formData, url, devtaSuccess2, AjaxError);
-        // }
-        // function devtaSuccess2(content, targetTextarea) {
-        //     console.log(JSON.parse(content))
-        // }
-       
-
-let YONI = [
-            {remainder: 1, yoni: "DHWAJA", face: "EAST", result: `FAME,  BEST FOR CLOTH SHOP AUR DHARMSHALA`},
-            {remainder: 2, yoni: "DHUMA", face: "SOUTH EAST", result: `GOOD FOR RESTAURANT OR BUSINESS DEPENDENT ON KITCHEN, BAKERY`},
-            {remainder: 3, yoni: "SIMHA", face: "SOUTH", result: `GOOD FOR WEAPONRY, AUTOMOBILES, DRAMA HALL TEMPLES`},
-            {remainder: 4, yoni: "SHWANA", face: "SOUTH WEST", result: `GOOD FOR MUSLIMS (YAVAN), TROUBLES FROM ENEMIES`},
-            {remainder: 5, yoni: "VRISHABHA", face: "WEST", result: `PALACE, DEVALYA, COLLEGE, DRAMA HALL`},
-            {remainder: 6, yoni: "KHARA", face: "NORTH WEST", result: `GOOD FOR ONLY PROSTITUTION BUSINESS, BAD FOR OTHER WORK`},
-            {remainder: 7, yoni: "GAJA", face: "NORTH", result: `GOOD FOR POULTRY FARMS, FOR OTHERS DISEASE GIVING`},
-            {remainder: 8, yoni: "KAAK", face: "NORTH EAST", result: `GOOD FOR MEDITATION`},
-        ];       
-        
-        // console.log(YONI);
-        // for(let i=0;i<YONI.length;i++){
-        //     var formData = new FormData();
-        //     formData.append('name', 'YONI');
-        //     formData.append('rem', YONI[i]['remainder']);
-        //     formData.append('rb', YONI[i]['yoni']);
-        //     formData.append('result', YONI[i]['result']);
-        //     formData.append('face', YONI[i]['face']);
-        //     // console.log(devtaName)
-        //     var url = BASE_URL + "/Main/addDevtas";
-        //     AjaxPost(formData, url, devtaSuccess3, AjaxError);
-        // }
-        // function devtaSuccess3(content, targetTextarea) {
-        //     console.log(JSON.parse(content))
-        // }
-
-let VARA = [
-            {remainder: 1, day: "SUNDAY", result: `NOT FAVOURABLE`},
-            {remainder: 2, day: "MONDAY", result: `FAVOURABLE`},
-            {remainder: 3, day: "TUESDAY", result: `NOT FAVOURABLE`},
-            {remainder: 4, day: "WEDNESDAY", result: `FAVOURABLE`},
-            {remainder: 5, day: "THURSDAY", result: `FAVOURABLE`},
-            {remainder: 6, day: "FRIDAY", result: `FAVOURABLE`},
-            {remainder: 7, day: "SATURDAY", result: `NOT FAVOURABLE`},
-        ];
-
-        // console.log(VARA);
-        // for(let i=0;i<VARA.length;i++){
-        //     var formData = new FormData();
-        //     formData.append('name', 'VARA');
-        //     formData.append('rem', VARA[i]['remainder']);
-        //     formData.append('rb', VARA[i]['day']);
-        //     formData.append('result', VARA[i]['result']);
-        //     formData.append('face', '');
-        //     // console.log(devtaName)
-        //     var url = BASE_URL + "/Main/addDevtas";
-        //     AjaxPost(formData, url, devtaSuccess4, AjaxError);
-        // }
-        // function devtaSuccess4(content, targetTextarea) {
-        //     console.log(JSON.parse(content))
-        // }
-        
-
-let TITHI = [
-            {remainder: 0, tithi: "POORNIMA", result: `NOT FAVOURABLE * MANSARA DOES NOT CONSIDER POORANMASI AS UNFAVOURABLE`},
-            {remainder: 1, tithi: "PRATHMA", result: `NOT FAVOURABLE`},
-            {remainder: 2, tithi: "DVITYA", result: `FAVOURABLE`},
-            {remainder: 3, tithi: "TRITYA", result: `FAVOURABLE`},
-            {remainder: 4, tithi: "CHATURTHI", result: `NOT FAVOURABLE`},
-            {remainder: 5, tithi: "PANCHAMI", result: `FAVOURABLE`},
-            {remainder: 6, tithi: "SASHTI", result: `MODERATE`},
-            {remainder: 7, tithi: "SAPTAMI", result: `FAVOURABLE`},
-            {remainder: 8, tithi: "ASHTMI", result: `NOT FAVOURABLE`},
-            {remainder: 9, tithi: "NAVAMI", result: `NOT FAVOURABLE`},
-            {remainder: 10, tithi: "DASHMI", result: `FAVOURABLE`},
-            {remainder: 11, tithi: "EKADASHI", result: `NOT FAVOURABLE`},
-            {remainder: 12, tithi: "DVADASHI", result: `FAVOURABLE`},
-            {remainder: 13, tithi: "TRAYODASHI", result: `FAVOURABLE`},
-            {remainder: 14, tithi: "CHATURDASHI", result: `NOT FAVOURABLE`},
-            {remainder: 15, tithi: "AMAVASYA", result: `NOT FAVOURABLE * MANSARA DOES NOT CONSIDER AMAVASYA AS UNFAVOURABLE`},
-            {remainder: 16, tithi: "PRATHMA", result: `NOT FAVOURABLE`},
-            {remainder: 17, tithi: "DVITYA", result: `FAVOURABLE`},
-            {remainder: 18, tithi: "TRITYA", result: `FAVOURABLE`},
-            {remainder: 19, tithi: "CHATURTHI", result: `NOT FAVOURABLE`},
-            {remainder: 20, tithi: "PANCHAMI", result: `FAVOURABLE`},
-            {remainder: 21, tithi: "SASHTI", result: `MODERATE`},
-            {remainder: 22, tithi: "SAPTAMI", result: `FAVOURABLE`},
-            {remainder: 23, tithi: "ASHTMI", result: `NOT FAVOURABLE`},
-            {remainder: 24, tithi: "NAVAMI", result: `NOT FAVOURABLE`},
-            {remainder: 25, tithi: "DASHMI", result: `FAVOURABLE`},
-            {remainder: 26, tithi: "EKADASHI", result: `NOT FAVOURABLE`},
-            {remainder: 27, tithi: "DVADASHI", result: `FAVOURABLE`},
-            {remainder: 28, tithi: "TRAYODASHI", result: `FAVOURABLE`},
-            {remainder: 29, tithi: "CHATURDASHI", result: `NOT FAVOURABLE`}
-
-        ];    
-
-        // console.log(TITHI);
-        // for(let i=0;i<TITHI.length;i++){
-        //     var formData = new FormData();
-        //     formData.append('name', 'TITHI');
-        //     formData.append('rem', TITHI[i]['remainder']);
-        //     formData.append('rb', TITHI[i]['tithi']);
-        //     formData.append('result', TITHI[i]['result']);
-        //     formData.append('face', '');
-        //     // console.log(devtaName)
-        //     var url = BASE_URL + "/Main/addDevtas";
-        //     AjaxPost(formData, url, devtaSuccess5, AjaxError);
-        // }
-        // function devtaSuccess5(content, targetTextarea) {
-        //     console.log(JSON.parse(content))
-        // }
-
-
-
-d3.select("[name='dimension-unit']").on('change', function() {
+d3.select("[name='dimension-unit']").on('change', function () {
     let unit = d3.select(this).property('value');
     d3.selectAll('.unit-text').text(unit);
 })
@@ -205,154 +9,148 @@ d3.select("[name='dimension-unit']").on('change', function() {
 let ownerNakshatraSelect = d3.select('[name="owner-nakshatra"]');
 
 let ownerNakshatraData = [
-    {text: "Ashwini", value: 1},{text: "Bharini", value: 2},{text: "kritika", value: 3},
-    {text: "Rohini", value: 4},{text: "Mrigshira", value: 5},{text: "Ardra", value: 6},
-    {text: "Punarvasu", value: 7},{text: "Pushva", value: 8},{text: "Ashlesha", value: 9},
-    {text: "Magha", value: 10},{text: "Poorva Falguni", value: 11},{text: "Uttar Falguni", value: 12},
-    {text: "Hasta", value: 13},{text: "Chitra", value: 14},{text: "Swati", value: 15},
-    {text: "Vishakha", value: 16},{text: "Anuradha", value: 17},{text: "Jyeshtha", value: 18},
-    {text: "Mool", value: 19},{text: "Poorvashadha", value: 20},{text: "Uttarashadha", value: 21},
-    {text: "Shravan", value: 22},{text: "Dhanishtha", value: 23},{text: "Shatbhisha", value: 24},
-    {text: "Poorva Bhadrapad", value: 25},{text: "Uttara Bhaprapad", value: 26},{text: "Revati", value: 0}
+    { text: "Ashwini", value: 1 }, { text: "Bharini", value: 2 }, { text: "kritika", value: 3 },
+    { text: "Rohini", value: 4 }, { text: "Mrigshira", value: 5 }, { text: "Ardra", value: 6 },
+    { text: "Punarvasu", value: 7 }, { text: "Pushva", value: 8 }, { text: "Ashlesha", value: 9 },
+    { text: "Magha", value: 10 }, { text: "Poorva Falguni", value: 11 }, { text: "Uttar Falguni", value: 12 },
+    { text: "Hasta", value: 13 }, { text: "Chitra", value: 14 }, { text: "Swati", value: 15 },
+    { text: "Vishakha", value: 16 }, { text: "Anuradha", value: 17 }, { text: "Jyeshtha", value: 18 },
+    { text: "Mool", value: 19 }, { text: "Poorvashadha", value: 20 }, { text: "Uttarashadha", value: 21 },
+    { text: "Shravan", value: 22 }, { text: "Dhanishtha", value: 23 }, { text: "Shatbhisha", value: 24 },
+    { text: "Poorva Bhadrapad", value: 25 }, { text: "Uttara Bhaprapad", value: 26 }, { text: "Revati", value: 0 }
 ];
 
 let options = ownerNakshatraSelect.selectAll("option")
     .data(ownerNakshatraData)
     .enter()
     .append("option")
-    .attr("class","text-uppercase text-sm");
+    .attr("class", "text-uppercase text-sm");
 
-    options.text(function(d) {
-        return d.text;
-      })
-      .attr("value", function(d) {
+options.text(function (d) {
+    return d.text;
+})
+    .attr("value", function (d) {
         return d.value;
-      });
+    });
 
 d3.select('.calculate-btn').on('click', () => {
     let realLength, realBreadth, length, breadth, hasta, siUnit, reportType, reportContainer;
-    
+
     realLength = d3.select('[name="length"]').property('value');
     realBreadth = d3.select('[name="breadth"]').property('value');
     siUnit = d3.select("[name='dimension-unit']").property('value')
     hasta = d3.select('[name="hasta"]').property('value');
 
 
-    if(realLength == "" || realBreadth == "" || hasta == "" || siUnit == "") {
-        alert("Please provide all details");
+    if (realLength == "" || realBreadth == "" || hasta == "" || siUnit == "") {
+        showAlert("Please provide all details",'danger');
 
     } else {
         length = convertIntoFeet(realLength, siUnit);
         breadth = convertIntoFeet(realBreadth, siUnit);
+        let rem = {
+            aaya: calculateAaya(length, breadth, hasta, siUnit),
+            vyaya: calculateVyaya(length, breadth, hasta, siUnit),
+            amsha: calculateAmsha(length, breadth, hasta, siUnit),
+            yoni: calculateYoni(length, breadth, hasta, siUnit),
+            vara: calculateVara(length, breadth, hasta, siUnit),
+            tithi: calculateTithi(length, breadth, hasta, siUnit)
+        }
+        //calling ajax to fetch result data from database
+        var formData = new FormData();
+        formData.append('remainders', JSON.stringify(rem));
+        var url = BASE_URL + "/Main/getAyadhiResult";
+        AjaxPost(formData, url, ayadhiSuccess, AjaxError);
 
-        reportContainer = d3.select('.display-report-area').classed('text-center', false).html(Template.aayadiDetailedReport(
-            realLength,
-            realBreadth,
-            siUnit,
-            (typeof calculateAaya(length,breadth,hasta,siUnit) === 'undefined') ? "Sonthing went wrong" : calculateAaya(length,breadth,hasta,siUnit).result,
-            (typeof calculateVara(length,breadth,hasta,siUnit) === 'undefined') ? "Sonthing went wrong" : calculateVara(length,breadth,hasta,siUnit).result,
-            (typeof calculateAmsha(length,breadth,hasta,siUnit) === 'undefined') ? "Sonthing went wrong" : calculateAmsha(length,breadth,hasta,siUnit).result,
-            (typeof calculateVyaya(length,breadth,hasta,siUnit) === 'undefined') ? "Sonthing went wrong" : calculateVyaya(length,breadth,hasta,siUnit).result,
-            (typeof calculateYoni(length,breadth,hasta,siUnit) === 'undefined') ? "Sonthing went wrong" : calculateYoni(length,breadth,hasta,siUnit).result,
-            (typeof calculateTithi(length,breadth,hasta,siUnit) === 'undefined') ? "Sonthing went wrong" : calculateTithi(length,breadth,hasta,siUnit).result
-        ));
+        function ayadhiSuccess(content, targetTextarea) {
+            let result = JSON.parse(content);
+            console.log(result);
+            if(result != ""){
+                reportContainer = d3.select('.display-report-area').classed('text-center', false).html(Template.aayadiDetailedReport(
+                    realLength,
+                    realBreadth,
+                    siUnit,
+                    result['aaya'] != "" ? result['aaya']['result'] : "",
+                    result['vara'] != "" ? result['vara']['result'] : "",
+                    result['amsha'] != "" ? result['amsha']['result'] : "",
+                    result['vyaya'] != "" ? result['vyaya']['result'] : "",
+                    result['yoni'] != "" ? result['yoni']['result'] : "",
+                    result['tithi'] != "" ? result['tithi']['result'] : ""
+                                   
+                ));
+
+            }else{
+                showAlert("Someting Wrong Contact to IT",'danger')
+            }
+            return JSON.parse(content)
+        }
+        
 
         console.log("Everthing in Feet :");
-        console.log("length: ",length," | breadth: ", breadth," | hasta: ", hasta, " | siUnit: ", siUnit);
+        console.log("length: ", length, " | breadth: ", breadth, " | hasta: ", hasta, " | siUnit: ", siUnit);
     }
-})      
+})
 
 
 function getCircum(length, breadth) {
-    return 2*(length + breadth);
+    return 2 * (length + breadth);
 }
 
 function calculateAaya(length, breadth, hasta) {
-    let circumference = getCircum(length,breadth);
+    let circumference = getCircum(length, breadth);
     let aayadi = Math.round(circumference / hasta);
-    let result = (aayadi * 8) % 12;
-    //console.table({"calculation":"Aaya","circumfereence: ":circumference, "aayadi": aayadi, "remainder": result});
-    let response = AAYA.find((obj, i) => {
-        if (obj.remainder === result) {
-            return obj;
-        }  
-    })
-
-    return response;
+    let result = (aayadi * 8) % 12;   
+    return result;
 }
 
 function calculateAmsha(length, breadth, hasta) {
-    let circumference = getCircum(length,breadth);
+    let circumference = getCircum(length, breadth);
     let aayadi = Math.round(circumference / hasta);
-    let result = (aayadi * 4) % 9;
-    let response = AMSHA.find((obj, i) => {
-        if (obj.remainder === result) {
-            return obj;
-        }  
-    })
-    return response;
+    let result = (aayadi * 4) % 9;    
+    return result;
 }
 
 function calculateVyaya(length, breadth, hasta) {
-    let circumference = getCircum(length,breadth);
+    let circumference = getCircum(length, breadth);
     let aayadi = Math.round(circumference / hasta);
-    let result = (aayadi * 9) % 10;
-    let response = VYAYA.find((obj, i) => {
-        if (obj.remainder === result) {
-            return obj;
-        }  
-    })
-    return response;
+    let result = (aayadi * 9) % 10;    
+    return result;
 }
 
 function calculateYoni(length, breadth, hasta) {
-    let circumference = getCircum(length,breadth);
+    let circumference = getCircum(length, breadth);
     let aayadi = Math.round(circumference / hasta);
-    let result = (aayadi * 3) % 9;
-    let response = YONI.find((obj, i) => {
-        if (obj.remainder === result) {
-            return obj;
-        }
-    })
-    return response;
+    let result = (aayadi * 3) % 9;    
+    return result;
 }
 
 function calculateVara(length, breadth, hasta) {
-    let circumference = getCircum(length,breadth);
+    let circumference = getCircum(length, breadth);
     let aayadi = Math.round(circumference / hasta);
-    let result = (aayadi * 9) % 7;
-    let response = VARA.find((obj, i) => {
-        if (obj.remainder === result) {
-            return obj;
-        }  
-    })
-    return response;
+    let result = (aayadi * 9) % 7;   
+    return result;
 }
 
 function calculateTithi(length, breadth, hasta) {
-    let circumference = getCircum(length,breadth);
+    let circumference = getCircum(length, breadth);
     let aayadi = Math.round(circumference / hasta);
-    let result = (aayadi * 9) % 30;
-    let response = TITHI.find((obj) => {
-        if (obj.remainder === result) {
-            return obj;
-        }  
-    })
-    return response;
+    let result = (aayadi * 9) % 30;    
+    return result;
 }
 
 
 
 function convertIntoFeet(value, siUnit) {
-    if(siUnit === "inch"){
+    if (siUnit === "inch") {
         return value / 12;
-    }else if(siUnit == "meter") {
+    } else if (siUnit == "meter") {
         return value * 3.281;
-    }else if(siUnit == "yard") {
+    } else if (siUnit == "yard") {
         return value * 3;
-    }else if(siUnit == "feet") {
+    } else if (siUnit == "feet") {
         return value;
     }
 }
-      
-      
+
+
+

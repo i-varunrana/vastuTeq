@@ -316,7 +316,7 @@ class Main extends CI_Controller
 			$server_output = curl_exec($ch);
 			curl_close($ch);
 			if (!empty($server_output)) {
-				echo json_encode($server_output);
+				echo $server_output;
 			} else {
 				echo json_encode(array('error' => 'Something wrong contact to IT.'));
 			}
@@ -374,6 +374,32 @@ class Main extends CI_Controller
 			}
 		} else {
 			echo json_encode(array('error' => 'Please enter devta name'));
+		}
+	}
+
+	// Api call function to get colorsAnd Details result
+	public function getColorAndDetails()
+	{
+		if (isset($_POST['grid']) && !empty($_POST['grid'])) {
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, base_url("Api/getColorAndDetails"));
+			curl_setopt($ch, CURLOPT_POST, 1);
+			curl_setopt(
+				$ch,
+				CURLOPT_POSTFIELDS,
+				http_build_query(array('grid' => $_POST['grid']))
+			);
+			// Receive server response ...
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$server_output = curl_exec($ch);
+			curl_close($ch);
+			if (!empty($server_output)) {
+				echo $server_output;
+			} else {
+				echo json_encode(array('error' => 'Something wrong contact to IT.'));
+			}
+		} else {
+			echo json_encode(array('error' => 'Please enter grid'));
 		}
 	}
 }
