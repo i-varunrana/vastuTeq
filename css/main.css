@@ -26,6 +26,8 @@
   src: url("/vastuteq/assets/fonts/Raleway-Bold.ttf");
 }
 
+/* checking for changes 2.00*/
+
 /***
 -------------------- B A S I C  C L A S S E S --------------------
 ***/
@@ -319,9 +321,11 @@ body {
 }
 
 .menu-sidebar {
-  margin: 75px 0 80px 10px;
+  /* margin: 75px 0 80px 10px; */
   position: relative;
-  top: 70px;
+  top: -5px;
+  margin-left: auto;
+  font-size: 12px;
 }
 
 ul.menu {
@@ -625,7 +629,7 @@ ul.menu {
 
 #mainArea {
   position: absolute;
-  top: 105px;
+  top: 55px;
   left: 0px;
   width: 100%;
   height: calc(100% - 105px);

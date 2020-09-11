@@ -7,6 +7,8 @@ export default class modal {
             {name: 'S', value: 1, color: "red"}, {name: 'SW', value: 1, color: "yellow"},  {name: 'W', value: 1, color: "#CCC"}, {name: 'NW', value: 1, color: "#CCC"}
         ];
 
+
+        
         this.DIRECTION_SIXTEEN = [
             { name: "N", color: "blue" },{ name: "NNE", color: "blue" },{ name: "NE", color: "blue" },{ name: "ENE", color: "green" },
             { name: "E", color: "green" },{ name: "ESE", color: "green" },{ name: "SE", color: "red" },{ name: "SSE", color: "red" },

@@ -28,7 +28,9 @@
     <script src="<?php echo base_url('js/d3.min.js') ?>"></script>
     <!-- CUSTOM JS -->
     <script src="<?php echo base_url('js/dashboard.js') ?>" type="module" defer></script>
-    <script> const base_url = '<?php echo base_url() ?>'</script>
+    <script>
+        const base_url = '<?php echo base_url() ?>'
+    </script>
 
 </head>
 
@@ -37,10 +39,37 @@
     //////////////////////////////// --- H E A D E R ---  ////////////////////////////////
     -->
     <section class="header">
-        <div class="title-bar">
-            <img class="logo" src="<?php echo base_url('assets/logo/logo2.svg') ?>" alt="logo" width="130">
+        <div class="title-bar" style="justify-content:left;">
+            <img class="logo" style="margin-left:20px" src="<?php echo base_url('assets/logo/logo2.svg') ?>" alt="logo" width="130">
+            <!-- M E N U  I T E M S -->
+            <div class="menu-sidebar">
+                <ul class="nav menu" style="float:right">
+                    <li class="nav-item">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main') ?>">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/ayadhi') ?>">Ayadi Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/devtas') ?>">Devtas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('Main/propertyInfo') ?>" ><i class="fas fa-plus"></i>&nbsp;&nbsp;New Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <img class="profile thumbnail rounded-circle" src="<?php echo base_url('assets/images/thumbnail.png') ?>" alt="user" width="20" id="profileButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileButton">
+                            <a class="dropdown-item modal__trigger" href="#" data-modal="#modal3"><i class="fas fa-cog"></i>&nbsp;&nbsp;Setting</a>
+                            <a class="dropdown-item" href="<?php echo base_url('Main/logout') ?>"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out</a>
+                        </div>
+                    </li>
+                </ul>                
+            </div>
         </div>
-        <div id="dynamicBar">
+        <!-- <div id="dynamicBar">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
@@ -48,44 +77,20 @@
                 </ol>
             </nav>
             <div class="dynamicbar-right">
-                <a href="<?php echo base_url('Main/propertyInfo')?>" class="btn btn-sm btn-outline rounded-0"><i class="fas fa-plus"></i>&nbsp;&nbsp;New Project</a>
+                <a href="<?php echo base_url('Main/propertyInfo') ?>" class="btn btn-sm btn-outline rounded-0"><i class="fas fa-plus"></i>&nbsp;&nbsp;New Project</a>
                 <img class="profile thumbnail rounded-circle" src="<?php echo base_url('assets/images/thumbnail.png') ?>" alt="user" width="20" id="profileButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileButton">
                     <a class="dropdown-item modal__trigger" href="#" data-modal="#modal3"><i class="fas fa-cog"></i>&nbsp;&nbsp;Setting</a>
-                    <a class="dropdown-item" href="<?php echo base_url('Main/logout')?>"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out</a>
+                    <a class="dropdown-item" href="<?php echo base_url('Main/logout') ?>"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <!-- M E N U  I C O N -->
-    <span class="toggle-button">
-        <div class="menu-bar menu-bar-top"></div>
-        <div class="menu-bar menu-bar-middle"></div>
-        <div class="menu-bar menu-bar-bottom"></div>
-    </span>
 
-    <!-- M E N U  I T E M S -->
-    <div class="menu-wrap">
-        <div class="menu-sidebar">
-            <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Client</a></li>
-                <li><a href="#">Properties</a></li>
-                <!-- <li class="menu-item-has-children"><a href="#">Click The Arrow</a>
-                    <span class="sidebar-menu-arrow"></span>
-                    <ul class="sub-menu">
-                        <li><a href="#">Alignment</a></li>
-                        <li><a href="#">Markup</a></li>
-                        <li><a href="#">Comments</a></li>
-                    </ul>
-                </li> -->
-                <li><a target="_blank" href="<?php echo base_url('Main/ayadhi')?>">Ayadi Calculator</a></li>
-                <li><a target="_blank" href="<?php echo base_url('Main/devtas')?>">Devtas</a></li>
-            </ul>
-        </div>
-    </div>
+
+
 
 
     <!-- 
@@ -263,7 +268,7 @@
             </div>
         </div>
     </div> -->
-   
+
 </body>
 
 </html>

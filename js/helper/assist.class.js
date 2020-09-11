@@ -102,7 +102,8 @@ export default class Assist {
             g.append('text').text(String.fromCharCode(i + 65).toUpperCase())
             .attr('x', points[i][0]-5)
             .attr('y', points[i][1]-7)
-            .attr('fill','#fb5665');
+            .attr('fill','#FFE13E')
+            .attr('font-weight','700');
 
             }
     }
